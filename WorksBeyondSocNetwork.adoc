@@ -23,6 +23,7 @@ CREATE (oriane)-[:FRIEND]->(alex)
 CREATE (oriane)-[:FRIEND]->(sam)
 CREATE (oriane)-[:FRIEND]->(robbie)
 CREATE (oriane)-[:FRIEND]->(hannah)
+CREATE (oriane)-[:FRIEND]->(cortne)
 
 //All the Users will write a wall post on their wall
 
