@@ -2,21 +2,23 @@
 == Simple Social Network Setup
 
 // setup
-// hide
+First we will create the user nodes.
 [source,cypher]
 ----
-CREATE (rachel:User {name: "Rachel Green"})
-CREATE (monica:User {name: "Monica Geller"})
-CREATE (phoebe:User {name: "Phoebe Buffay"})
-CREATE (joey:User {name: "Joey Tribbiani"})
-CREATE (chandler:User {name: "Chandler Bing"})
-CREATE (ross:User {name: "Ross Geller"})
+CREATE (robbie:User {name: "Robbie Robinson"})
+CREATE (oriane:User {name: "Oriane Rosenthal"})
+CREATE (alex:User {name: "Alex Maddock"})
+CREATE (sam:User {name: "Sam Faull"})
+CREATE (cortne:User {name: "Cortne Thomas"})
+CREATE (andre:User {name: "Andre Jennings"})
+----
+And here is everything else
+[source, cypher]
+----
+CREATE (robbie)-[:FRIEND]->(oriane)
+CREATE (robbie)-[:FRIEND]->(alex)
+CREATE (robbie)-[:FRIEND]->(sam)
 
-CREATE (rachel)-[:FRIEND]->(monica)
-CREATE (rachel)-[:FRIEND]->(phoebe)
-CREATE (rachel)-[:FRIEND]->(joey)
-CREATE (rachel)-[:FRIEND]->(chandler)
-CREATE (rachel)-[:FRIEND]->(ross)
 
 CREATE (monica)-[:FRIEND]->(phoebe)
 CREATE (monica)-[:FRIEND]->(joey)
