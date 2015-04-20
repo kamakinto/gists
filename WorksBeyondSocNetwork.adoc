@@ -2,7 +2,7 @@
 == Simple Social Network Setup
 
 // setup
-First we will create the user nodes.
+//First we will create the user nodes.
 [source,cypher]
 ----
 CREATE (robbie:User {name: "Robbie Robinson"})
@@ -12,10 +12,9 @@ CREATE (sam:User {name: "Sam Faull"})
 CREATE (cortne:User {name: "Cortne Thomas"})
 CREATE (andre:User {name: "Andre Jennings"})
 CREATE (hannah:User {name: "Hannah M"})
-----
-Now we will join our friends together
-[source, cypher]
-----
+
+//Now we will join our friends together
+
 CREATE (robbie)-[:FRIEND]->(oriane)
 CREATE (robbie)-[:FRIEND]->(alex)
 CREATE (robbie)-[:FRIEND]->(sam)
@@ -24,35 +23,28 @@ CREATE (oriane)-[:FRIEND]->(alex)
 CREATE (oriane)-[:FRIEND]->(sam)
 CREATE (oriane)-[:FRIEND]->(robbie)
 CREATE (oriane)-[:FRIEND]->(hannah)
-----
 
-All the Users will write a wall post on their wall
-[source, cypher]
-----
+//All the Users will write a wall post on their wall
+
 
 CREATE (robbie)-[:POSTED]->(post0:Post {id: "0", text: "I make shit happen!!"})
 CREATE (oriane)-[:POSTED]->(post1:Post {id: "1", text: "I hug trees!!"})
-----
 
-Now we will leave comments on each others post/status
-[source, cypher]
-----
 
-// Comments
+//Now we will leave comments on each others post/status
+
 
 CREATE (post0)<-[:COMMENTED{id:"6", text: "bah!" }]-(oriane)
 CREATE (post1)<-[:COMMENTED{id:"7", text: "wine!"}]-(robbie)
-----
 
-and for the last part, we will add a likes section 
-//graph
+
+//and for the last part, we will add a likes section 
+
 
 // Likes
-CREATE (post0)<-[:LIKED{ id: "12", text: "Ross likes this." }]-(ross)
-CREATE (post1)<-[:LIKED{ id: "13", text: "Rachel likes this." }]-(rachel)
-CREATE (post2)<-[:LIKED{ id: "14", text: "Chandler likes this." }]-(chandler)
-CREATE (post3)<-[:LIKED{ id: "15", text: "Joey likes this." }]-(joey)
-CREATE (post4)<-[:LIKED{ id: "16", text: "Phoebe likes this." }]-(phoebe)
-CREATE (post5)<-[:LIKED{ id: "17", text: "Monica likes this." }]-(monica)
+CREATE (post0)<-[:LIKED{ id: "12", text: Robbie likes this."}]-(robbie)
+CREATE (post1)<-[:LIKED{ id: "13", text: Oriane likes this."}]-(oriane)
+----
 
+//graph
 
