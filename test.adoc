@@ -1,7 +1,8 @@
 == GraphGists
+== Social Network Setup
 
-This repo contains content for use at http://gist.neo4j.org/.
-
-//console 
-
-
+// setup
+// hide
+[source,cypher]
+----
+CREATE (rachel:User {name: "Rachel Green"})
