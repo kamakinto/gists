@@ -45,7 +45,7 @@ CREATE (post1)<-[:COMMENTED{id:"7", text: "wine!"}]-(robbie)
 ----
 
 and for the last part, we will add a likes section 
-
+//graph
 
 // Likes
 CREATE (post0)<-[:LIKED{ id: "12", text: "Ross likes this." }]-(ross)
@@ -54,6 +54,5 @@ CREATE (post2)<-[:LIKED{ id: "14", text: "Chandler likes this." }]-(chandler)
 CREATE (post3)<-[:LIKED{ id: "15", text: "Joey likes this." }]-(joey)
 CREATE (post4)<-[:LIKED{ id: "16", text: "Phoebe likes this." }]-(phoebe)
 CREATE (post5)<-[:LIKED{ id: "17", text: "Monica likes this." }]-(monica)
-----
-//graph
+
 
