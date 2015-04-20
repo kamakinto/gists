@@ -1,5 +1,5 @@
 == GraphGists
-== Social Network Setup
+== Simple Social Network Setup
 
 // setup
 // hide
@@ -56,3 +56,5 @@ CREATE (post3)<-[:LIKED{ id: "15", text: "Joey likes this." }]-(joey)
 CREATE (post4)<-[:LIKED{ id: "16", text: "Phoebe likes this." }]-(phoebe)
 CREATE (post5)<-[:LIKED{ id: "17", text: "Monica likes this." }]-(monica)
 ----
+//graph
+
