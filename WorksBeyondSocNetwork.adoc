@@ -42,9 +42,10 @@ CREATE (post1)<-[:COMMENTED{id:"7", text: "wine!"}]-(robbie)
 
 
 // Likes
-CREATE (post0)<-[:LIKED{ id: "12", text: Robbie likes this."}]-(robbie)
-CREATE (post1)<-[:LIKED{ id: "13", text: Oriane likes this."}]-(oriane)
+CREATE (post0)<-[:LIKED{ id: "12", text: "Robbie likes this."}]-(robbie)
+CREATE (post1)<-[:LIKED{ id: "13", text: "Oriane likes this."}]-(oriane)
 ----
 
 //graph
+//console
 
