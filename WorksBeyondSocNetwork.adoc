@@ -46,11 +46,11 @@ CREATE (oriane)-[:FRIEND]->(cortne)
 //All the Users will post a status
 
 CREATE (robbie)-[:WROTE_STATUS]->(status0:Status {id: "0", text: "I make shit happen!!"})
-CREATE (oriane)-[:WROTE_STATUS]->(status1:Status {id: "1", text: "I Love me some trees!})
-CREATE (oriane)-[:WROTE_STATUS]->(status2:Status {id: "2", text: "I Love me some wine!})
-CREATE (oriane)-[:WROTE_STATUS]->(status3:Status {id: "3", text: "I Love me some cheese!})
-CREATE (hannah)-[:WROTE_STATUS]->(status4:Status {id: "4", text: "I Love me some beer!})
-CREATE (sam)-[:WROTE_STATUS]->(status5:Status {id: "5", text: "I Love me some Fried Chicken!})
+CREATE (oriane)-[:WROTE_STATUS]->(status1:Status {id: "1", text: "I Love me some trees!"})
+CREATE (oriane)-[:WROTE_STATUS]->(status2:Status {id: "2", text: "I Love me some wine!"})
+CREATE (oriane)-[:WROTE_STATUS]->(status3:Status {id: "3", text: "I Love me some cheese!"})
+CREATE (hannah)-[:WROTE_STATUS]->(status4:Status {id: "4", text: "I Love me some beer!"})
+CREATE (sam)-[:WROTE_STATUS]->(status5:Status {id: "5", text: "I Love me some Fried Chicken!"})
 
 
 
