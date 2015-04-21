@@ -38,23 +38,24 @@ CREATE (oriane)-[:FRIEND]->(robbie)
 CREATE (oriane)-[:FRIEND]->(hannah)
 CREATE (oriane)-[:FRIEND]->(cortne)
 
-//All the Users will write a wall post on their wall
+//All the Users will post a status
 
 CREATE (robbie)-[:WROTE_STATUS]->(status0:Status {id: "0", text: "I make shit happen!!"})
 CREATE (oriane)-[:WROTE_STATUS]->(status1:Status {id: "1", text: "I hug trees!!"})
 
 //Now we will leave comments on each others status. a status comment will be its own entity
 CREATE (robbieStatus0_comment0 {content:"BAH!"})
-CREATE (robbie)-[:WROTE_COMMENT]->(robbieStatus0_comment1)<-[:HAS_COMMENT]-(status0)
+CREATE (robbie)-[:WROTE_COMMENT]->(robbieStatus0_comment1)<-[:HAS_COMMENT]-(status1)
+
 CREATE (orianeStatus1_comment0 {content:"WINE!"})
-CREATE (oriane)-[:WROTE_COMMENT]->(orianeStatus1_comment0)<-[:HAS_COMMENT]-(status1)
+CREATE (oriane)-[:WROTE_COMMENT]->(orianeStatus1_comment0)<-[:HAS_COMMENT]-(status0)
 
 //and for the last part, we will add a likes section 
 
 
 // Likes
-CREATE (status0)<-[:LIKED{ id: "12", text: "Robbie likes this."}]-(robbie)
-CREATE (status1)<-[:LIKED{ id: "13", text: "Oriane likes this."}]-(oriane)
+CREATE (status0)<-[:LIKED{ id: "12", text: "Robbie likes this."}]-(oriane)
+CREATE (status1)<-[:LIKED{ id: "13", text: "Oriane likes this."}]-(robbie)
 ----
 
 //graph
