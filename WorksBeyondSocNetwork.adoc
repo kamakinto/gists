@@ -75,14 +75,14 @@ Now we will Query common things from the perspective of a user.
 ----
  MATCH (u:User)-[:FRIEND]->(f)
  WHERE u.name = "Robbie Robinson"
- RETURN f.name AS friend's list
+ RETURN f.name AS friends_list
 ----
- 
- 
+
 //table
  
 . Robbies Comments
 . Robbies news feed (aggregate list of statuses from all friends)
+
 [source,cypher]
 ----
  MATCH (u:User)-[:FRIEND]-(f)-[:WROTE_STATUS]->(post)
