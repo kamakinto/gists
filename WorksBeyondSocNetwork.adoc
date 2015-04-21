@@ -15,7 +15,7 @@ CREATE (hannah:User {name: "Hannah M"})
 
 //now we will create some books
 
-CREATE (Sedona:Publication {title:"The Sedona Method", Author:"Hale Dwoskin"})
+CREATE (sedona:Publication {title:"The Sedona Method", Author:"Hale Dwoskin"})
 CREATE (earth:Publication {title:"A New Earth", Author:"Eckhart Tolle"})
 CREATE (now:Publication {title:"The Power of Now", Author: "Eckhart Tolle"})
 
@@ -49,8 +49,8 @@ CREATE (oriane)-[:WROTE_STATUS]->(status1:Status {id: "1", text: "I hug trees!!"
 //Now we will leave comments on each others post/status
 
 
-CREATE (post0)<-[:COMMENTED{id:"6", text: "bah!" }]-(oriane)
-CREATE (post1)<-[:COMMENTED{id:"7", text: "wine!"}]-(robbie)
+CREATE (status0)<-[:COMMENTED{id:"6", text: "bah!" }]-(oriane)
+CREATE (status1)<-[:COMMENTED{id:"7", text: "wine!"}]-(robbie)
 
 
 //and for the last part, we will add a likes section 
