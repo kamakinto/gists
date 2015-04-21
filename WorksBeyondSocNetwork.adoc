@@ -65,14 +65,13 @@ CREATE (oriane)-[:WROTE_COMMENT]->(robstat1:StatComment {content:"You Right Boo 
 CREATE (status0)<-[:LIKED{ id: "12", text: "Oriane likes this."}]-(oriane)
 
 ----
-
 //graph
 
 Now we will Query common things from the perspective of a user.
  
  . List of Robbies Friends
  
- [source,cypher]
+[source,cypher]
 ----
  MATCH (u:User)-[:FRIEND]-(f)-[:WROTE_STATUS]->(post)
  WHERE u.name = "Robbie Robinson"
