@@ -67,9 +67,9 @@ CREATE (status0)<-[:LIKED{ id: "12", text: "Oriane likes this."}]-(oriane)
 ----
 //graph
 
-Now we will Query common things from the perspective of a user.
+== Now we will Query common things from the perspective of a user.
  
-. List of Robbies Friends
+=== List of Robbies Friends
  
 [source,cypher]
 ----
@@ -79,7 +79,7 @@ Now we will Query common things from the perspective of a user.
 ----
 //table
  
-. Robbies Comments
+=== Robbies Comments
 
 [source, cypher]
 ----
@@ -90,7 +90,7 @@ RETURN u.name as User, status.text as Status
 //table
 
 
-. Robbies news feed (aggregate list of statuses from all friends)
+=== Robbies news feed (aggregate list of statuses from all friends)
 
 [source,cypher]
 ----
@@ -101,7 +101,7 @@ RETURN u.name as User, status.text as Status
 //table
 
 
-. Robbies Node data 
+=== Robbies Node data 
 
 [source,cypher]
 ----
