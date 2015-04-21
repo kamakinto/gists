@@ -35,6 +35,7 @@ CREATE (robbie)-[:WROTE_COMMENT]->(SedonaComment1)<-[:HAS_COMMENT]-(sedona)
 CREATE (robbie)-[:FRIEND]->(oriane)
 CREATE (robbie)-[:FRIEND]->(alex)
 CREATE (robbie)-[:FRIEND]->(sam)
+CREATE (robbie)-[:FRIEND]->(andre)
 
 CREATE (oriane)-[:FRIEND]->(alex)
 CREATE (oriane)-[:FRIEND]->(sam)
@@ -60,5 +61,5 @@ CREATE (status0)<-[:LIKED{ id: "12", text: "Oriane likes this."}]-(oriane)
 ----
 
 //graph
-//console
+
 
