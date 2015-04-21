@@ -26,7 +26,6 @@ CREATE (SedonaComment1:Comment {content:"Very Enlightening, I have learned to re
 //connect comments to their publications, and users
 CREATE (robbie)-[:WROTE_COMMENT]->(SedonaComment1)<-[:HAS_COMMENT]-(sedona)
 
-
 //Now we will join our friends together
 
 CREATE (robbie)-[:FRIEND]->(oriane)
@@ -41,23 +40,20 @@ CREATE (oriane)-[:FRIEND]->(cortne)
 
 //All the Users will write a wall post on their wall
 
-
 CREATE (robbie)-[:WROTE_STATUS]->(status0:Status {id: "0", text: "I make shit happen!!"})
 CREATE (oriane)-[:WROTE_STATUS]->(status1:Status {id: "1", text: "I hug trees!!"})
 
-
-//Now we will leave comments on each others post/status
-
-
-CREATE (status0)<-[:COMMENTED{id:"6", text: "bah!" }]-(oriane)
-CREATE (status1)<-[:COMMENTED{id:"7", text: "wine!"}]-(robbie)
-
+//Now we will leave comments on each others status. a status comment will be its own entity
+CREATE (robbieStatus0_comment0 {content:"BAH!"})
+CREATE (robbie)-[:WROTE_COMMENT]->(robbieStatus0_comment1)<-[:HAS_COMMENT]-(status0)
+CREATE (orianeStatus1_comment0 {content:"WINE!"})
+CREATE (oriane)-[:WROTE_COMMENT]->(orianeStatus1_comment0)<-[:HAS_COMMENT](status1)
 
 //and for the last part, we will add a likes section 
 
 
 // Likes
-CREATE (post0)<-[:LIKED{ id: "12", text: "Robbie likes this."}]-(robbie)
+CREATE (0)<-[:LIKED{ id: "12", text: "Robbie likes this."}]-(robbie)
 CREATE (post1)<-[:LIKED{ id: "13", text: "Oriane likes this."}]-(oriane)
 ----
 
