@@ -24,7 +24,7 @@ CREATE (SedonaComment1:Comment {content:"Very Enlightening, I have learned to re
 
 
 //connect comments to their publications, and users
-CREATE (robbie)-[:WROTE_COMMENT]->(SedonaComment1)<-[HAS_COMENT]-(sedona)
+CREATE (robbie)-[:WROTE_COMMENT]->(SedonaComment1)<-[:HAS_COMMENT]-(sedona)
 
 
 //Now we will join our friends together
