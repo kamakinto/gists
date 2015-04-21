@@ -71,7 +71,8 @@ CREATE (status0)<-[:LIKED{ id: "12", text: "Oriane likes this."}]-(oriane)
 Now we will Query common things from the perspective of a user.
  
  . List of Robbies Friends
- [source, cypher]
+ 
+ [source,cypher]
  ----
  MATCH (u:User)-[:FRIEND]-(f)-[:WROTE_STATUS]->(post)
  WHERE u.name = "Robbie Robinson"
