@@ -13,6 +13,13 @@ CREATE (cortne:User {name: "Cortne Thomas"})
 CREATE (andre:User {name: "Andre Jennings"})
 CREATE (hannah:User {name: "Hannah M"})
 
+//now we will create some books
+
+CREATE (Sedona:Publication {title:"The Sedona Method", Author:"Hale Dwoskin"})
+CREATE (earth:Publication {title:"A New Earth", Author:"Eckhart Tolle"})
+
+
+
 //Now we will join our friends together
 
 CREATE (robbie)-[:FRIEND]->(oriane)
