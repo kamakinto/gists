@@ -19,6 +19,10 @@ CREATE (sedona:Publication {title:"The Sedona Method", Author:"Hale Dwoskin"})
 CREATE (earth:Publication {title:"A New Earth", Author:"Eckhart Tolle"})
 CREATE (now:Publication {title:"The Power of Now", Author: "Eckhart Tolle"})
 
+CREATE (tolle:Author {name:"Eckhart Tolle"})-[:AUTHORED]->(earth)
+CREATE (tolle)-[:AUTHORED]->(now)
+CREATE (hale:Author {name:"Hale Dwoskin"})-[:AUTHORED]->(sedona)
+
 //Book Comments Section
 CREATE (SedonaComment1:PubComment {content:"Very Enlightening, I have learned to release!"})
 
