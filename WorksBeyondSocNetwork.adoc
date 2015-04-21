@@ -20,7 +20,7 @@ CREATE (earth:Publication {title:"A New Earth", Author:"Eckhart Tolle"})
 CREATE (now:Publication {title:"The Power of Now", Author: "Eckhart Tolle"})
 
 //Book Comments Section
-CREATE (SedonaComment1:Comment {content:"Very Enlightening, I have learned to release!"})
+CREATE (SedonaComment1:PubComment {content:"Very Enlightening, I have learned to release!"})
 
 
 //connect comments to their publications, and users
@@ -44,7 +44,7 @@ CREATE (robbie)-[:WROTE_STATUS]->(status0:Status {id: "0", text: "I make shit ha
 
 
 //Now we will leave comments on each others status. a status comment will be its own entity
-CREATE (oriane)-[:WROTE_COMMENT]->(robstat1 {content:"You Right Boo Boo!"})<-[:HAS_COMMENT]-(status0)
+CREATE (oriane)-[:WROTE_COMMENT]->(robstat1:StatComment {content:"You Right Boo Boo!"})<-[:HAS_COMMENT]-(status0)
 
 
 //and for the last part, we will add a likes section 
