@@ -47,7 +47,7 @@ CREATE (oriane)-[:WROTE_STATUS]->(status1:Status {id: "1", text: "I hug trees!!"
 CREATE (robbieStatus0_comment0 {content:"BAH!"})
 CREATE (robbie)-[:WROTE_COMMENT]->(robbieStatus0_comment1)<-[:HAS_COMMENT]-(status0)
 CREATE (orianeStatus1_comment0 {content:"WINE!"})
-CREATE (oriane)-[:WROTE_COMMENT]->(orianeStatus1_comment0)<-[:HAS_COMMENT](status1)
+CREATE (oriane)-[:WROTE_COMMENT]->(orianeStatus1_comment0)<-[:HAS_COMMENT]-(status1)
 
 //and for the last part, we will add a likes section 
 
