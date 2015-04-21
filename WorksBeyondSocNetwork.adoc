@@ -5,7 +5,7 @@
 //First we will create the user nodes.
 [source,cypher]
 ----
-CREATE (robbie:User {name: "Robbie Robinson"})
+CREATE (robbie:User {name: "Robbie Robinson", age:"27", favorite_quote:"Send out good vibes"})
 CREATE (oriane:User {name: "Oriane Rosenthal"})
 CREATE (alex:User {name: "Alex Maddock"})
 CREATE (sam:User {name: "Sam Faull"})
@@ -102,5 +102,12 @@ RETURN u.name as User, status.text as Status
 
 
 . Robbies Node data 
+[source,cypher]
+----
+MATCH (u:User)
+WHERE u.name = "Robbie Robinson"
+RETURN u.name as Name, u.age as Age, u.favorite_quote as Favorite_Quote
+----
+//table
 
 
