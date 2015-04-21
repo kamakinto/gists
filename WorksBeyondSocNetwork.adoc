@@ -1,5 +1,5 @@
-== GraphGists
-==WorksBeyond Graph Set-up
+
+== WorksBeyond Graph Set-up
 
 // setup
 //First we will create the user nodes.
@@ -64,9 +64,9 @@ CREATE (status0)<-[:LIKED{ id: "12", text: "Oriane likes this."}]-(oriane)
 
 Now we will Query common things from the perspective of a user.
  
- .List of Robbies Friends
- .Robbies Comments
- .Robbies news feed (aggregate list of statuses from all friends)
- .Robbies Node data 
+ . List of Robbies Friends
+ . Robbies Comments
+ . Robbies news feed (aggregate list of statuses from all friends)
+ . Robbies Node data 
 
 
