@@ -53,8 +53,8 @@ CREATE (oriane)-[:WROTE_COMMENT]->(orianeStatus1_comment0)<-[:HAS_COMMENT]-(stat
 
 
 // Likes
-CREATE (0)<-[:LIKED{ id: "12", text: "Robbie likes this."}]-(robbie)
-CREATE (post1)<-[:LIKED{ id: "13", text: "Oriane likes this."}]-(oriane)
+CREATE (status0)<-[:LIKED{ id: "12", text: "Robbie likes this."}]-(robbie)
+CREATE (status1)<-[:LIKED{ id: "13", text: "Oriane likes this."}]-(oriane)
 ----
 
 //graph
