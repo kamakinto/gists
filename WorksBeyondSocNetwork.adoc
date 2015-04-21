@@ -45,10 +45,10 @@ CREATE (oriane)-[:WROTE_STATUS]->(status1:Status {id: "1", text: "I hug trees!!"
 
 //Now we will leave comments on each others status. a status comment will be its own entity
 CREATE (robbieStatus0_comment0 {content:"BAH!"})
-CREATE (robbie)-[:WROTE_COMMENT]->(robbieStatus0_comment1)<-[:HAS_COMMENT]-(status1)
+CREATE (robbie)-[:WROTE_COMMENT]->(robbieStatus0_comment0)<-[:HAS_COMMENT]-(status1)
 
-CREATE (orianeStatus1_comment0 {content:"WINE!"})
-CREATE (oriane)-[:WROTE_COMMENT]->(orianeStatus1_comment0)<-[:HAS_COMMENT]-(status0)
+CREATE (orianeStatus0_comment0 {content:"WINE!"})
+CREATE (oriane)-[:WROTE_COMMENT]->(orianeStatus0_comment0)<-[:HAS_COMMENT]-(status0)
 
 //and for the last part, we will add a likes section 
 
