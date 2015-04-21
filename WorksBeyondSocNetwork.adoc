@@ -81,6 +81,15 @@ Now we will Query common things from the perspective of a user.
 //table
  
 . Robbies Comments
+[source, cypher]
+----
+MATCH (u:User)->[:WROTE_STATUS]-(status)
+WHERE u.name = "Robbie Robinson"
+RETURN u.name as User, status.text as Status
+----
+//table
+
+
 . Robbies news feed (aggregate list of statuses from all friends)
 
 [source,cypher]
