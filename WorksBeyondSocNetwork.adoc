@@ -17,7 +17,14 @@ CREATE (hannah:User {name: "Hannah M"})
 
 CREATE (Sedona:Publication {title:"The Sedona Method", Author:"Hale Dwoskin"})
 CREATE (earth:Publication {title:"A New Earth", Author:"Eckhart Tolle"})
+CREATE (now:Publication {title:"The Power of Now", Author: "Eckhart Tolle"})
 
+//Book Comments Section
+CREATE (SedonaComment1:Comment {content:"Very Enlightening, I have learned to release!"})
+
+
+//connect comments to their publications, and users
+CREATE (robbie)-[:WROTE_COMMENT]->(SedonaComment1)<-[HAS_COMENT]-(sedona)
 
 
 //Now we will join our friends together
@@ -35,8 +42,8 @@ CREATE (oriane)-[:FRIEND]->(cortne)
 //All the Users will write a wall post on their wall
 
 
-CREATE (robbie)-[:POSTED]->(post0:Post {id: "0", text: "I make shit happen!!"})
-CREATE (oriane)-[:POSTED]->(post1:Post {id: "1", text: "I hug trees!!"})
+CREATE (robbie)-[:WROTE_STATUS]->(status0:Status {id: "0", text: "I make shit happen!!"})
+CREATE (oriane)-[:WROTE_STATUS]->(status1:Status {id: "1", text: "I hug trees!!"})
 
 
 //Now we will leave comments on each others post/status
