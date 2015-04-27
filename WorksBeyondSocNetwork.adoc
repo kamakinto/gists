@@ -1,5 +1,9 @@
 
 == WorksBeyond Graph Set-up
+This page represents a quick model of how data would be used within the neo4j graph database. Nodes will represent Users, Comments,
+books, and status's. Relationships/Edges will represent Friendships and the connections between users and their interactions.
+Simple Queries will be demonstrated. 
+
 
 // setup
 //First we will create the user nodes.
