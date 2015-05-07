@@ -1,0 +1,116 @@
+
+== WorksBeyond Graph Set-up
+=== This page represents a quick model of how data would be used within the neo4j graph database. Nodes will represent Users, Comments,books, and status's. Relationships/Edges will represent Friendships and the connections between users and their interactions. Simple Queries will be demonstrated. 
+
+
+// setup
+//First we will create the user nodes.
+[source,cypher]
+----
+CREATE (robbie:User {name: "Robbie Robinson", age:"27", favorite_quote:"Send out good vibes"})
+CREATE (oriane:User {name: "Oriane Rosenthal"})
+CREATE (alex:User {name: "Alex Maddock"})
+CREATE (sam:User {name: "Sam Faull"})
+CREATE (cortne:User {name: "Cortne Thomas"})
+CREATE (andre:User {name: "Andre Jennings"})
+CREATE (hannah:User {name: "Hannah M"})
+
+//now we will create some books
+
+CREATE (sedona:Publication {title:"The Sedona Method", Author:"Hale Dwoskin"})
+CREATE (earth:Publication {title:"A New Earth", Author:"Eckhart Tolle"})
+CREATE (now:Publication {title:"The Power of Now", Author: "Eckhart Tolle"})
+
+CREATE (tolle:Author {name:"Eckhart Tolle"})-[:AUTHORED]->(earth)
+CREATE (tolle)-[:AUTHORED]->(now)
+CREATE (hale:Author {name:"Hale Dwoskin"})-[:AUTHORED]->(sedona)
+
+//Book Comments Section
+CREATE (SedonaComment1:PubComment {content:"Very Enlightening, I have learned to release!"})
+
+
+//connect comments to their publications, and users
+CREATE (robbie)-[:WROTE_COMMENT]->(SedonaComment1)<-[:HAS_COMMENT]-(sedona)
+
+//Now we will join our friends together
+
+CREATE (robbie)-[:FRIEND]->(oriane)
+CREATE (robbie)-[:FRIEND]->(alex)
+CREATE (robbie)-[:FRIEND]->(sam)
+CREATE (robbie)-[:FRIEND]->(andre)
+
+CREATE (oriane)-[:FRIEND]->(alex)
+CREATE (oriane)-[:FRIEND]->(sam)
+CREATE (oriane)-[:FRIEND]->(robbie)
+CREATE (oriane)-[:FRIEND]->(hannah)
+CREATE (oriane)-[:FRIEND]->(cortne)
+
+//All the Users will post a status
+
+CREATE (robbie)-[:WROTE_STATUS]->(status0:Status {id: "0", text: "I make shit happen!!"})
+CREATE (oriane)-[:WROTE_STATUS]->(status1:Status {id: "1", text: "I Love me some trees!"})
+CREATE (oriane)-[:WROTE_STATUS]->(status2:Status {id: "2", text: "I Love me some wine!"})
+CREATE (oriane)-[:WROTE_STATUS]->(status3:Status {id: "3", text: "I Love me some cheese!"})
+CREATE (hannah)-[:WROTE_STATUS]->(status4:Status {id: "4", text: "I Love me some beer!"})
+CREATE (sam)-[:WROTE_STATUS]->(status5:Status {id: "5", text: "I Love me some Fried Chicken!"})
+
+
+
+//Now we will leave comments on each others status. a status comment will be its own entity
+CREATE (oriane)-[:WROTE_COMMENT]->(robstat1:StatComment {content:"You Right Boo Boo!"})<-[:HAS_COMMENT]-(status0)
+
+
+//and for the last part, we will add a likes section 
+
+
+// Likes
+CREATE (status0)<-[:LIKED{ id: "12", text: "Oriane likes this."}]-(oriane)
+
+----
+//graph
+
+== Now we will Query common things from the perspective of a user.
+ 
+=== List of Robbies Friends
+ 
+[source,cypher]
+----
+ MATCH (u:User)-[:FRIEND]->(f)
+ WHERE u.name = "Robbie Robinson"
+ RETURN f.name AS friends_list
+----
+//table
+ 
+=== Robbies Comments
+
+[source, cypher]
+----
+MATCH (u:User)-[:WROTE_STATUS]->(status)
+WHERE u.name = "Robbie Robinson"
+RETURN u.name as User, status.text as Status
+----
+//table
+
+
+=== Robbies news feed (aggregate list of statuses from all friends)
+
+[source,cypher]
+----
+ MATCH (u:User)-[:FRIEND]-(f)-[:WROTE_STATUS]->(post)
+ WHERE u.name = "Robbie Robinson"
+ RETURN f.name AS friend, post.text as status
+----
+//table
+
+
+=== Robbies Node data 
+
+[source,cypher]
+----
+MATCH (u:User)
+WHERE u.name = "Robbie Robinson"
+RETURN u.name as Name, u.age as Age, u.favorite_quote as Favorite_Quote
+----
+//table
+
+
