@@ -96,10 +96,13 @@ RETURN u.name as User, status.text as Status
 
 [source,cypher]
 ----
- MATCH (u:User)-[:FRIEND]-(f)-[:WROTE_STATUS]->(post),
- (u)-[:WROTE_STATUS]->(mypost)
+ MATCH (u:User)-[:FRIEND]-(f)-[:WROTE_STATUS]->(post)
  WHERE u.name = "Robbie Robinson"
- RETURN post + mypost as all
+ RETURN post as posts
+ UNION
+ MATCH (u:User)-[:WROTE_STATUS]->(mypost)
+ WHERE u.name = "Robbie Robinson"
+ RETURN mypost as posts
 ----
 //table
 
