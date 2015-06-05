@@ -99,7 +99,7 @@ RETURN u.name as User, status.text as Status
  MATCH (u:User)-[:FRIEND]-(f)-[:WROTE_STATUS]->(post),
  (u)-[:WROTE_STATUS]->(mypost)
  WHERE u.name = "Robbie Robinson"
- RETURN collect(post) + collect(mypost) as all
+ RETURN post + mypost as all
 ----
 //table
 
