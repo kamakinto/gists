@@ -34,41 +34,84 @@ corequisites:"None",
 fees:"None",
 course_description:"Techniques of the Masters Lectures, demonstrations, and workshops focus on materials and techniques used by artists over the centuries. Studies the historical background of techniques of drawing, painting, sculpture, and the graphic arts combined with a hands-on approach so that each student can experience the basic elements of the plastic arts.Please note that an additional fee will be charged for this course."})
 
-CREATE (:Course {name: "", 
-course_id:"",
-credits:"",
-level: "",
+CREATE (Intro_To_Photo_And_Doc_Expression:Course {name: "Intro To Photo & Doc Expression", 
+course_id:"AR1060",
+credits:"4",
+level: "Undergraduate",
+prerequisites:"None",
+corequisites:"None",
+fees:"None",
+course_description:"Provides a basic understanding of camera controls, optics, film, exposure and their influences on the final picture. Primarily hands-on, the course also features slide lectures, discussions, and critiques to explore photography's many genres. Equipment requirement: a 35 mm camera with a lens capable of manually setting the shutter speeds, apertures, and focus."})
+
+CREATE (Digital_Photography:Course {name: "Digital Photography", 
+course_id:"AR1061",
+credits:"4",
+level: "Undergraduate",
+prerequisites:"None",
+corequisites:"None",
+fees:"None",
+course_description:"This introductory course is an exploration of both technical and aesthetic concerns in photography. Using a digital camera, students will produce original work in response to a series of lectures, assignments, and bi-weekly critique classes. The course will cover the fundamentals of photographing with digital SLR’s, and students will learn a range of digital tools including color correction, making selections, working with layers and inkjet printing. After mastering the basics, students will work towards the completion of a final project and the focus of the remaining classes will be on critiques. Students will be asked to make pictures that are challenging in both content and form and express the complex and poetic nature of the human experience.Please note that an additional fee will be charged for this course."})
+
+CREATE (Drawing_In_Paris:Course {name: "Drawing In Paris", 
+course_id:"AR1080",
+credits:"4",
+level: "Undergraduate",
 prerequisites:"",
 corequisites:"",
 fees:"",
 course_description:""})
 
-CREATE (:Course {name: "", 
-course_id:"",
-credits:"",
-level: "",
-prerequisites:"",
-corequisites:"",
-fees:"",
+CREATE (The_World_The_Text_And_The_Critic:Course {name: "The World, The Text, And The Critic I", 
+course_id:"CL1025",
+credits:"4",
+level: "Undergraduate",
+prerequisites:"None",
+corequisites:"None",
+fees:"None",
+course_description:"Considers closely three moments when the practice of writing changed radically in response to historical and cultural processes, from Ancient Greece to 1800 (specific contents change each year). Investigates the forces that inform creative imagination and cultural production. Places those moments and those forces within a geographical and historical map of literary production, and introduces the tools of literary analysis."})
+
+CREATE (Contemporary_Feminist_Theory:Course {name: "Contemporary Feminist Theory", 
+course_id:"CL2006",
+credits:"4",
+level: "Undergraduate",
+prerequisites:"None",
+corequisites:"None",
+fees:"None",
+course_description:"Introduces the methodology of Gender Studies and the theory upon which it is based. Examines contemporary debates across a range of issues now felt to be of world-wide feminist interest: sexuality, reproduction, production, writing, representation, culture, race, and politics. Encourages responsible theorizing across disciplines and cultures."})
+
+CREATE (Contemporary_Feminist_Theory:Course {name: "Contemporary Feminist Theory", 
+course_id:"CL2006",
+credits:"4",
+level: "Undergraduate",
+prerequisites:"None",
+corequisites:"None",
+fees:"None",
 course_description:""})
 
-CREATE (:Course {name: "", 
-course_id:"",
-credits:"",
-level: "",
-prerequisites:"",
-corequisites:"",
-fees:"",
-course_description:""})
+CREATE (Paris_Through_Its_Books:Course {name: "Paris Through Its Books", 
+course_id:"CL2010",
+credits:"4",
+level: "Undergraduate",
+prerequisites:"None",
+corequisites:"None",
+fees:"None",
+course_description:"Examines how experiences of Paris have been committed to the page from the first century to the present. Considers the uses and effects of overviews, street-level accounts, and underground approaches to describing the city and its inhabitants. Includes visits to the sewers and museums, revolutionary sites and archives, with multiple members of the comparative literature faculty speaking on their areas of expertise. http://www.aup.edu/paris-through-its-books"})
+
+CREATE (The_Beginning_Of_European_Literature_AG:Course {name: "The Beginning Of European Literature: Ancient Greece", 
+course_id:"CL2013",
+credits:"2",
+level: "Undergraduate",
+prerequisites:"None",
+corequisites:"None",
+fees:"None",
+course_description:"Overview of Greek literature from its beginnings to the brilliant intellectuals of the Roman Empire. Tracks the creation of literary forms like lyric, tragedy, and novel. Points out contexts and discourses that nourished this grand enterprise, the invention of literature. Presents great works and their reception until today, yet also the rare gem that makes you see why it is worthwhile to return to the roots. Authors considered include Homer, Sappho, Sophocles, Euripides, Aristophanes, Herodotus, Plato, and Plutarch. May be taught together with CL 2113."})
 
 
+//now we will create the Departments
+CREATE (CL:Department {name: "Comparative Literature", 
+dept_id:"CL"})
 
 
-//now we will create some books
-
-CREATE (sedona:Publication {title:"The Sedona Method", Author:"Hale Dwoskin"})
-CREATE (earth:Publication {title:"A New Earth", Author:"Eckhart Tolle"})
-CREATE (now:Publication {title:"The Power of Now", Author: "Eckhart Tolle"})
 
 CREATE (tolle:Author {name:"Eckhart Tolle"})-[:AUTHORED]->(earth)
 CREATE (tolle)-[:AUTHORED]->(now)
