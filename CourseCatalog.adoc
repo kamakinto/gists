@@ -7,7 +7,7 @@
 //First we will create the user nodes.
 [source,cypher]
 ----
-CREATE (Intro To Drawing:Course {name: "Intro To Drawing", 
+CREATE (Intro_To_Drawing:Course {name: "Intro To Drawing", 
 course_id:"AR1010",
 favorite_quote:"Send out good vibes"})
 CREATE (oriane:User {name: "Oriane Rosenthal"})
