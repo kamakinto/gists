@@ -112,7 +112,7 @@ Create(Intro_To_Painting)-[:DEPARTMENT_OF]->(AR)
 Create(Materials_And_Techniques_Of_The_Masters)-[:DEPARTMENT_OF]->(AR)
 Create(Intro_To_Photo_And_Doc_Expression)-[:DEPARTMENT_OF]->(AR)
 Create(Drawing_In_Paris)-[:DEPARTMENT_OF]->(AR)
-Create(The_World_The_Text_And_The_Critic)-[:DEPARTMENT_OF]->(AR)
+Create(Digital_Photography)-[:DEPARTMENT_OF]->(AR)
 
 Create(The_Beginning_Of_European_Literature_AG)-[:DEPARTMENT_OF]->(CL)
 Create(Paris_Through_Its_Books)-[:DEPARTMENT_OF]->(CL)
@@ -155,12 +155,12 @@ RETURN c.name as course_name, c.id as course_id, c.course_description as Course_
 //table
 
 
-=== Arts Node data 
+=== Art course Node data 
 
 [source,cypher]
 ----
 MATCH (ar:Course)-[:DEPARTMENT_OF]->(d:Department)
-WHERE .name = "Robbie Robinson"
+WHERE ar.course_id = "AR1060"
 RETURN ar.name as Name, ar.course_id as course_id, ar.credits as credits, ar.level as level, ar.prerequisits as prerequisites
 ----
 //table
