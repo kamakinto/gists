@@ -25,7 +25,7 @@ corequisites:"None",
 fees:"None",
 course_description:"For students with little or no previous experience in drawing or painting. First analyzes still life objects in basic plastic terms starting with value. Concentrates during each class session on a new painterly quality until a sufficient visual vocabulary is achieved so that more complicated subjects such as the nude can be approached. Work will be done in oil."})
 
-CREATE (Materials_&_Techniques_Of_The_Masters:Course {name: "Materials & Techniques Of The Masters", 
+CREATE (Materials_And_Techniques_Of_The_Masters:Course {name: "Materials & Techniques Of The Masters", 
 course_id:"AR1020",
 credits:"4",
 level: "Undergraduate",
