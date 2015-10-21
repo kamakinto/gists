@@ -9,13 +9,60 @@
 ----
 CREATE (Intro_To_Drawing:Course {name: "Intro To Drawing", 
 course_id:"AR1010",
-favorite_quote:"Send out good vibes"})
-CREATE (oriane:User {name: "Oriane Rosenthal"})
-CREATE (alex:User {name: "Alex Maddock"})
-CREATE (sam:User {name: "Sam Faull"})
-CREATE (cortne:User {name: "Cortne Thomas"})
-CREATE (andre:User {name: "Andre Jennings"})
-CREATE (hannah:User {name: "Hannah M"})
+credits:"4",
+level: "Undergraduate",
+prerequisites:"None",
+corequisites:"None",
+fees:"52 euro",
+course_description:"A studio course, which provides an introduction to basic drawing problems for the beginning student interested in developing his or her drawing skills. Subject matter includes still life, portraiture, landscape, and the nude. Mediums introduced are pencil, charcoal, and ink wash.Please note that an additional fee will be charged for this course."})
+
+CREATE (Intro_To_Painting:Course {name: "Intro To Painting", 
+course_id:"AR1015",
+credits:"4",
+level: "Undergraduate",
+prerequisites:"None",
+corequisites:"None",
+fees:"None",
+course_description:"For students with little or no previous experience in drawing or painting. First analyzes still life objects in basic plastic terms starting with value. Concentrates during each class session on a new painterly quality until a sufficient visual vocabulary is achieved so that more complicated subjects such as the nude can be approached. Work will be done in oil."})
+
+CREATE (Materials_&_Techniques_Of_The_Masters:Course {name: "Materials & Techniques Of The Masters", 
+course_id:"AR1020",
+credits:"4",
+level: "Undergraduate",
+prerequisites:"None",
+corequisites:"None",
+fees:"None",
+course_description:"Techniques of the Masters Lectures, demonstrations, and workshops focus on materials and techniques used by artists over the centuries. Studies the historical background of techniques of drawing, painting, sculpture, and the graphic arts combined with a hands-on approach so that each student can experience the basic elements of the plastic arts.Please note that an additional fee will be charged for this course."})
+
+CREATE (:Course {name: "", 
+course_id:"",
+credits:"",
+level: "",
+prerequisites:"",
+corequisites:"",
+fees:"",
+course_description:""})
+
+CREATE (:Course {name: "", 
+course_id:"",
+credits:"",
+level: "",
+prerequisites:"",
+corequisites:"",
+fees:"",
+course_description:""})
+
+CREATE (:Course {name: "", 
+course_id:"",
+credits:"",
+level: "",
+prerequisites:"",
+corequisites:"",
+fees:"",
+course_description:""})
+
+
+
 
 //now we will create some books
 
