@@ -79,15 +79,6 @@ corequisites:"None",
 fees:"None",
 course_description:"Introduces the methodology of Gender Studies and the theory upon which it is based. Examines contemporary debates across a range of issues now felt to be of world-wide feminist interest: sexuality, reproduction, production, writing, representation, culture, race, and politics. Encourages responsible theorizing across disciplines and cultures."})
 
-CREATE (Contemporary_Feminist_Theory:Course {name: "Contemporary Feminist Theory", 
-course_id:"CL2006",
-credits:"4",
-level: "Undergraduate",
-prerequisites:"None",
-corequisites:"None",
-fees:"None",
-course_description:""})
-
 CREATE (Paris_Through_Its_Books:Course {name: "Paris Through Its Books", 
 course_id:"CL2010",
 credits:"4",
@@ -111,65 +102,35 @@ course_description:"Overview of Greek literature from its beginnings to the bril
 CREATE (CL:Department {name: "Comparative Literature", 
 dept_id:"CL"})
 
-
-
-CREATE (tolle:Author {name:"Eckhart Tolle"})-[:AUTHORED]->(earth)
-CREATE (tolle)-[:AUTHORED]->(now)
-CREATE (hale:Author {name:"Hale Dwoskin"})-[:AUTHORED]->(sedona)
-
-//Book Comments Section
-CREATE (SedonaComment1:PubComment {content:"Very Enlightening, I have learned to release!"})
-
-
-//connect comments to their publications, and users
-CREATE (robbie)-[:WROTE_COMMENT]->(SedonaComment1)<-[:HAS_COMMENT]-(sedona)
-
-//Now we will join our friends together
-
-CREATE (robbie)-[:FRIEND]->(oriane)
-CREATE (robbie)-[:FRIEND]->(alex)
-CREATE (robbie)-[:FRIEND]->(sam)
-CREATE (robbie)-[:FRIEND]->(andre)
-
-CREATE (oriane)-[:FRIEND]->(alex)
-CREATE (oriane)-[:FRIEND]->(sam)
-CREATE (oriane)-[:FRIEND]->(robbie)
-CREATE (oriane)-[:FRIEND]->(hannah)
-CREATE (oriane)-[:FRIEND]->(cortne)
-
-//All the Users will post a status
-
-CREATE (robbie)-[:WROTE_STATUS]->(status0:Status {id: "0", text: "I make shit happen!!"})
-CREATE (oriane)-[:WROTE_STATUS]->(status1:Status {id: "1", text: "I Love me some trees!"})
-CREATE (oriane)-[:WROTE_STATUS]->(status2:Status {id: "2", text: "I Love me some wine!"})
-CREATE (oriane)-[:WROTE_STATUS]->(status3:Status {id: "3", text: "I Love me some cheese!"})
-CREATE (hannah)-[:WROTE_STATUS]->(status4:Status {id: "4", text: "I Love me some beer!"})
-CREATE (sam)-[:WROTE_STATUS]->(status5:Status {id: "5", text: "I Love me some Fried Chicken!"})
+CREATE (AR:Department {name: "Art", 
+dept_id:"AR"})
 
 
 
-//Now we will leave comments on each others status. a status comment will be its own entity
-CREATE (oriane)-[:WROTE_COMMENT]->(robstat1:StatComment {content:"You Right Boo Boo!"})<-[:HAS_COMMENT]-(status0)
+Create(Intro_To_Drawing)-[:DEPARTMENT_OF]->(AR)
+Create(Intro_To_Painting)-[:DEPARTMENT_OF]->(AR)
+Create(Materials_And_Techniques_Of_The_Masters)-[:DEPARTMENT_OF]->(AR)
+Create(Intro_To_Photo_And_Doc_Expression)-[:DEPARTMENT_OF]->(AR)
+Create(Drawing_In_Paris)-[:DEPARTMENT_OF]->(AR)
+Create(The_World_The_Text_And_The_Critic)-[:DEPARTMENT_OF]->(AR)
 
+Create(The_Beginning_Of_European_Literature_AG)-[:DEPARTMENT_OF]->(CL)
+Create(Paris_Through_Its_Books)-[:DEPARTMENT_OF]->(CL)
+Create(Contemporary_Feminist_Theory)-[:DEPARTMENT_OF]->(CL)
+Create(The_World_The_Text_And_The_Critic)-[:DEPARTMENT_OF]->(CL)
 
-//and for the last part, we will add a likes section 
-
-
-// Likes
-CREATE (status0)<-[:LIKED{ id: "12", text: "Oriane likes this."}]-(oriane)
 
 ----
 //graph
 
 == Now we will Query common things from the perspective of a user.
  
-=== List of Robbies Friends
+=== List of All the Courses
  
 [source,cypher]
 ----
- MATCH (u:User)-[:FRIEND]->(f)
- WHERE u.name = "Robbie Robinson"
- RETURN f.name AS friends_list
+ MATCH (c:Course)-[:DEPARTMENT_OF]->(d)
+ RETURN c.name AS course_list
 ----
 //table
  
@@ -177,9 +138,8 @@ CREATE (status0)<-[:LIKED{ id: "12", text: "Oriane likes this."}]-(oriane)
 
 [source, cypher]
 ----
-MATCH (u:User)-[:WROTE_STATUS]->(status)
-WHERE u.name = "Robbie Robinson"
-RETURN u.name as User, status.text as Status
+MATCH (c:Course)
+RETURN c.name as course_name, c.id as course_id, c.course_description as Course_info
 ----
 //table
 
@@ -188,20 +148,20 @@ RETURN u.name as User, status.text as Status
 
 [source,cypher]
 ----
- MATCH (u:User)-[:FRIEND]-(f)-[:WROTE_STATUS]->(post)
- WHERE u.name = "Robbie Robinson"
- RETURN f.name AS friend, post.text as status
+ MATCH (c:Course)-[:DEPARTMENT_OF]->(d:Department)
+ WHERE d.dept_id = "CL"
+ RETURN c.name AS course_name, d.name as Department
 ----
 //table
 
 
-=== Robbies Node data 
+=== Arts Node data 
 
 [source,cypher]
 ----
-MATCH (u:User)
-WHERE u.name = "Robbie Robinson"
-RETURN u.name as Name, u.age as Age, u.favorite_quote as Favorite_Quote
+MATCH (ar:Course)-[:DEPARTMENT_OF]->(d:Department)
+WHERE .name = "Robbie Robinson"
+RETURN ar.name as Name, ar.course_id as course_id, ar.credits as credits, ar.level as level, ar.prerequisits as prerequisites
 ----
 //table
 
