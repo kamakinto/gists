@@ -129,6 +129,11 @@ user_id:"a9481"})
 CREATE (cal:Instructor {name: "Rudy Cal", 
 user_id:"a4819"})
 
+CREATE(tom)-[:INSTRUCTOR_OF]->(Paris_Through_Its_Books)
+CREATE(bas)-[:INSTRUCTOR_OF]->(Contemporary_Feminist_Theory)
+CREATE(num)-[:INSTRUCTOR_OF]->(Digital_Photography)
+CREATE(cal)-[:INSTRUCTOR_OF]->(Intro_To_Drawing)
+
 Create(rich)-[:ENROLLED_IN]->(Paris_Through_Its_Books)
 Create(sam)-[:ENROLLED_IN]->(Paris_Through_Its_Books)
 Create(ann)-[:ENROLLED_IN]->(Paris_Through_Its_Books)
