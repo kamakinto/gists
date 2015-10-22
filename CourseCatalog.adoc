@@ -1,5 +1,5 @@
 
-== WorksBeyond Graph Set-up
+== AUP Graph Set-up
 === This page represents a quick model of how data would be used within the neo4j graph database. Nodes will represent Users (Students, Faculty, Staff), Courses, and Majors. Relationships/Edges will represent a courses relationship to its majors and minors. faculty teaching courses, and students enrolled within the courses. Simple Queries will be demonstrated. 
 
 
@@ -117,10 +117,10 @@ user_id:"a948888"})
 CREATE (rich:User {name: "Richard Rosenthal", 
 user_id:"a94811"})
 
-Create(rich)-[:ENROLLED_IN]->(AR)
-Create(sam)-[:ENROLLED_IN]->(AR)
-Create(ann)-[:ENROLLED_IN]->(AR)
-Create(bob)-[:ENROLLED_IN]->(CL)
+Create(rich)-[:ENROLLED_IN]->(Paris_Through_Its_Books)
+Create(sam)-[:ENROLLED_IN]->(Paris_Through_Its_Books)
+Create(ann)-[:ENROLLED_IN]->(Paris_Through_Its_Books)
+Create(bob)-[:ENROLLED_IN]->(The_Beginning_Of_European_Literature_AG)
 
 
 
