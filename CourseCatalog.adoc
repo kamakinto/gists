@@ -4,7 +4,7 @@
 
 
 // setup
-//First we will create the user nodes.
+//First we will create the course nodes.
 [source,cypher]
 ----
 CREATE (Intro_To_Drawing:Course {name: "Intro To Drawing", 
@@ -104,6 +104,24 @@ dept_id:"CL"})
 
 CREATE (AR:Department {name: "Art", 
 dept_id:"AR"})
+
+CREATE (bob:User {name: "Bob Thomas", 
+user_id:"a94843"})
+
+CREATE (ann:User {name: "Ann Robinson", 
+user_id:"a94898"})
+
+CREATE (sam:User {name: "Samuel Jenkins", 
+user_id:"a948888"})
+
+CREATE (rich:User {name: "Richard Rosenthal", 
+user_id:"a94811"})
+
+Create(rich)-[:ENROLLED_IN]->(AR)
+Create(sam)-[:ENROLLED_IN]->(AR)
+Create(ann)-[:ENROLLED_IN]->(AR)
+Create(bob)-[:ENROLLED_IN]->(CL)
+
 
 
 
