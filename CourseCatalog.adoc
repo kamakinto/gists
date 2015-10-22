@@ -1,6 +1,6 @@
 
 == AUP Graph Set-up
-=== This page represents a quick model of how data would be used within the neo4j graph database. Nodes will represent Users (Students, Faculty, Staff), Courses, and Majors. Relationships/Edges will represent a courses relationship to its majors and minors. faculty teaching courses, and students enrolled within the courses. Simple Queries will be demonstrated. 
+=== This page represents a quick model of how data would be used within the neo4j graph database. Nodes will represent Users (Students, Faculty, Staff, etc.), Courses, and Majors. Relationships/Edges will represent a courses relationship to its majors and minors. faculty teaching courses, and students enrolled within the courses. Simple Queries will be demonstrated. 
 
 
 // setup
